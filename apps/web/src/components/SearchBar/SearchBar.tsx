@@ -1,5 +1,5 @@
 
-import { useState, type FormEvent } from 'react';
+import { useState, type SubmitEvent } from 'react';
 import { APP_CONTENT } from '../../constants/app.constants';
 import './SearchBar.css';
 
@@ -10,16 +10,15 @@ interface SearchBarProps {
 export function SearchBar({ onSearch }: SearchBarProps) {
   const [query, setQuery] = useState('');
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
+  event.preventDefault();
 
-    const trimmedQuery = query.trim();
+  const trimmedQuery = query.trim();
 
-    if (!trimmedQuery) return;
+  if (!trimmedQuery) return;
 
-    onSearch(trimmedQuery);
-  };
-
+  onSearch(trimmedQuery);
+};
   return (
     <form className="search-bar" onSubmit={handleSubmit} role="search">
       <input
