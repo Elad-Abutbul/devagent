@@ -1,0 +1,32 @@
+
+.header {
+  width: 100%;
+  padding: 20px 40px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header__logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.header__name {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 16px 20px;
+  }
+}
